@@ -110,7 +110,7 @@ export default function decorate(block) {
     if (ctaP) {
       const ctaLink = ctaP.querySelector('a');
       if (ctaLink) {
-        ctaLink.className = 'showcase-link';
+        ctaLink.className = 'showcase-link cta-chevron cta-chevron--blue';
         ctaDiv.append(ctaLink);
       }
     }

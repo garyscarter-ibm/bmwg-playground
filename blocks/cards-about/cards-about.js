@@ -1,3 +1,11 @@
 export default function decorate(block) {
-  // Pre-structured from import
+  [...block.children].forEach((row) => {
+    if (row.querySelector('img')) {
+      row.classList.add('overlay-card', 'overlay-card--tinted');
+    }
+  });
+
+  block.querySelectorAll('a').forEach((a) => {
+    a.classList.add('cta-chevron', 'cta-chevron--white');
+  });
 }

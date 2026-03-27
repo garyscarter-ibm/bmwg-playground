@@ -181,24 +181,9 @@ main > .section.dark .columns-model-showcase-wrapper .spec-unit {
   padding: 10px 0 20px;
 }
 
+/* CTA link styled via shared .cta-chevron--blue (shared-components.css) */
 .columns-model-showcase .showcase-link {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.39px;
-  color: var(--color-bmw-blue);
-  text-decoration: none;
-  display: inline-block;
   white-space: nowrap;
-  padding: 15px 36px 15px 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M20.243 26.243l4.263-4.228-4.243-4.243' fill='none' stroke='%231c69d4' stroke-width='2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: auto;
-}
-
-.columns-model-showcase .showcase-link:hover {
-  color: var(--color-bmw-blue-hover);
-  text-decoration: none;
 }
 
 /* Override EDS button styling on links */

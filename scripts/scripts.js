@@ -116,6 +116,7 @@ async function loadEager(doc) {
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
+    await loadCSS(`${window.hlx.codeBasePath}/styles/shared-components.css`);
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
