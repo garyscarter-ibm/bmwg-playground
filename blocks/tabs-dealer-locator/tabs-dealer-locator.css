@@ -46,7 +46,7 @@
 }
 
 .tabs-dealer-locator .tabs-dealer-locator-tab.active {
-  color: rgb(28 105 212);
+  color: var(--link-color, rgb(28 105 212));
 }
 
 /* Content box with border */
@@ -105,7 +105,7 @@
 .tabs-dealer-locator .tabs-dealer-locator-map-toggle {
   display: inline-block;
   margin-top: 16px;
-  color: rgb(28 105 212);
+  color: var(--link-color, rgb(28 105 212));
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
@@ -183,4 +183,27 @@
     flex-direction: column;
     gap: 24px;
   }
+}
+
+/* === MINI Brand Variant === */
+.tabs-dealer-locator.mini .tabs-dealer-locator-tab {
+  font-family: MINISansSerif-Regular, sans-serif;
+  font-weight: 400;
+}
+
+.tabs-dealer-locator.mini .tabs-dealer-locator-tab.active {
+  color: #0085ac;
+}
+
+.tabs-dealer-locator.mini h4 {
+  font-family: MINISansSerif-Regular, sans-serif;
+}
+
+.tabs-dealer-locator.mini p {
+  font-family: MINISansSerif-Regular, sans-serif;
+}
+
+.tabs-dealer-locator.mini .tabs-dealer-locator-map-toggle {
+  color: #0085ac;
+  font-family: MINISansSerif-Regular, sans-serif;
 }
