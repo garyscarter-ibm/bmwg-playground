@@ -27,6 +27,14 @@
 }
 
 @font-face {
+  font-family: MINISerif-Bold;
+  src: url('/fonts/mini_serif-bold-web.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: MINISansSerif-Regular;
   src: url('/fonts/mini_sans_serif-regular-web.woff') format('woff');
   font-weight: normal;

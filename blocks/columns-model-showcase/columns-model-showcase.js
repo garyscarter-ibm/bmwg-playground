@@ -24,6 +24,11 @@ export default function decorate(block) {
       source.type = 'video/mp4';
       video.append(source);
 
+      // Ensure autoplay works in all browsers including headless
+      video.addEventListener('canplay', () => {
+        video.play().catch(() => {});
+      }, { once: true });
+
       mediaCol.replaceChildren(video);
     }
     mediaCol.classList.add('showcase-media');

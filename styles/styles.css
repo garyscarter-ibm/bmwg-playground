@@ -410,6 +410,12 @@ main > .section.light-grey > div {
 
 /* ===== Page-level Section Spacing ===== */
 
+/* BMW model showcase and car locator sections: grey background (matches original #F5F5F5) */
+main > .section.columns-model-showcase-container,
+main > .section.cards-car-locator-container {
+  background-color: var(--color-background-grey);
+}
+
 /* Columns section: white background (original has grey only for NEWS, white for columns) */
 main > .section.cards-news-container {
   background-color: var(--color-white);
@@ -481,6 +487,88 @@ main > .section.tabs-dealer-locator-container > .default-content-wrapper > h2 {
   text-transform: uppercase;
   padding-bottom: 24px;
   margin-bottom: 0;
+}
+
+/* MINI brand overrides for body text, section headings, and global colors */
+.section:has(.mini) {
+  font-family: MINISansSerif-Regular, sans-serif;
+  color: #000;
+}
+
+.section:has(.mini) p {
+  font-family: MINISansSerif-Regular, sans-serif;
+  color: #000;
+}
+
+.section:has(.mini) h2,
+.section:has(.mini) h3,
+.section:has(.mini) h4,
+.section:has(.mini) h5 {
+  color: #000;
+}
+
+/* MINI section-level H2 headings: 32px centered uppercase (matching original) */
+main > .section:has(.mini) > .default-content-wrapper > h2 {
+  font-family: MINISerif-Bold, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 32px;
+  letter-spacing: normal;
+  color: #000;
+}
+
+/* MINI section-level H3 headings: same style as H2 for consistency */
+main > .section:has(.mini) > .default-content-wrapper > h3 {
+  font-family: MINISerif-Bold, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 32px;
+  letter-spacing: normal;
+  color: #000;
+  margin-bottom: 64px;
+}
+
+/* MINI dealer locator: override BMW grey background on heading wrapper and add top padding */
+main > .section.tabs-dealer-locator-container:has(.mini) {
+  padding-top: 48px;
+}
+
+main > .section.tabs-dealer-locator-container:has(.mini) > .default-content-wrapper:first-child {
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+/* MINI dealer locator H2: smaller than main section headings (28px matching original) */
+main > .section.tabs-dealer-locator-container:has(.mini) > .default-content-wrapper > h2 {
+  font-size: 28px;
+  line-height: 21px;
+  padding-bottom: 24px;
+}
+
+/* MINI page grey background sections (matches original #F5F5F5) */
+.section.carousel-offers-container:has(.mini),
+.section.banner-terms-container:has(.mini) {
+  background-color: var(--color-background-grey);
+}
+
+/* MINI page section padding adjustments */
+.section.tiles-cta-container:has(.mini) {
+  padding-top: 86px;
+  padding-bottom: 0;
+}
+
+/* tiles-CTA section heading: extra bottom margin */
+.section.tiles-cta-container:has(.mini) > .default-content-wrapper > h2 {
+  margin: 0 0 40px;
+}
+
+.section.tiles-contact-container:has(.mini) {
+  padding-top: 80px;
+  padding-bottom: 65px;
 }
 
 @media (max-width: 599px) {

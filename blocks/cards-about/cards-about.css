@@ -17,9 +17,9 @@
   padding: 35px;
 }
 
-/* === Text-only card (blue background link list) === */
+/* === Text-only card (brand-color background link list) === */
 .cards-about > div:not(:has(img)) {
-  background-color: rgb(6 83 182);
+  background-color: var(--color-bmw-blue, rgb(6 83 182));
 }
 
 .cards-about > div:not(:has(img)) > div {
@@ -56,4 +56,52 @@
   .cards-about {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* === MINI Brand Variant === */
+.cards-about.mini > div:not(:has(img)) {
+  background-color: #01693e;
+}
+
+.cards-about.mini > div {
+  min-height: 400px;
+}
+
+/* MINI: gradient tint — dark at top for text readability, clear at bottom */
+.cards-about.mini > div.overlay-card--tinted > div:first-child::after {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 65%) 0%, rgb(0 0 0 / 20%) 50%, rgb(0 0 0 / 0%) 100%);
+}
+
+/* MINI: text at top of card */
+.cards-about.mini > div > div:last-child:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 28px 28px 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cards-about.mini h5 {
+  font-family: MINISerif-Bold, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  padding: 0 0 12px;
+}
+
+.cards-about.mini p {
+  font-family: MINISansSerif-Regular, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+}
+
+/* MINI: white chevron CTA — inherit shared defaults, just set font */
+.cards-about.mini a.cta-chevron.cta-chevron--white {
+  font-family: MINISansSerif-Regular, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
 }
