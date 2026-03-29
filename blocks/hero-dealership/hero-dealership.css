@@ -66,7 +66,7 @@
   --hd-welcome-size: 44px;
   --hd-welcome-line-height: 44px;
   --hd-welcome-display: block;
-  --hd-container-min-height: 840px;
+  --hd-container-min-height: 100vh;
   --hd-content-padding: 56px;
   --hd-cta-font-size: 1.125rem;
   --hd-cta-font-weight: 400;
@@ -194,10 +194,12 @@ main > .section.hero-dealership-container > .hero-dealership-wrapper {
 }
 
 /* MINI: content row fills full width, top-aligned, above frame */
+/* Extra 50px pushes the ratings bar below the viewport fold on load */
 .hero-dealership.mini > div:nth-child(2) {
   max-width: 100%;
   justify-content: flex-start;
   z-index: 4;
+  min-height: calc(100vh + 50px);
 }
 
 /* === Subtitle / Description === */
@@ -269,8 +271,10 @@ main > .section.hero-dealership-container > .hero-dealership-wrapper {
   text-decoration: none;
 }
 
-/* MINI: tighter spacing above CTAs */
+/* MINI: subtitle uses sans-serif body font, normal weight */
 .hero-dealership.mini .hero-dealership-subtitle {
+  font-family: MINISansSerif-Regular, sans-serif;
+  font-weight: 400;
   padding-bottom: 0;
 }
 
@@ -387,33 +391,11 @@ main > .section.hero-dealership-container > .hero-dealership-wrapper {
 
 /* Stars row */
 .hero-dealership-stars-row {
-  display: block;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.hero-dealership .star {
-  display: block;
-  float: left;
-  width: 16px;
-  height: 15px;
-  margin: 0 8px 0 0;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-}
-
-/* BMW blue stars (default) */
-.hero-dealership .star-full {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 15'%3E%3Cpath d='M8 0l2.47 4.74L16 5.73l-3.88 3.93L13 15 8 12.47 3 15l.88-5.34L0 5.73l5.53-1L8 0z' fill='%231c69d4'/%3E%3C/svg%3E");
-  background-size: 16px 15px;
-  background-repeat: no-repeat;
-}
-
-.hero-dealership .star-empty {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 15'%3E%3Cpath d='M8 0l2.47 4.74L16 5.73l-3.88 3.93L13 15 8 12.47 3 15l.88-5.34L0 5.73l5.53-1L8 0z' fill='%23ffffff' opacity='0.3'/%3E%3C/svg%3E");
-  background-size: 16px 15px;
-  background-repeat: no-repeat;
-}
+/* BMW stars styled via shared .star-rating (shared-components.css) */
 
 /* MINI gold stars - larger 17x17 */
 .hero-dealership.mini .star {
@@ -441,25 +423,7 @@ main > .section.hero-dealership-container > .hero-dealership-wrapper {
   line-height: 30px;
 }
 
-/* Review link with arrow */
-.hero-dealership-reviews-link {
-  display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--color-white);
-  text-decoration: none;
-  letter-spacing: 0.39px;
-  padding: 15px 36px 15px 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4 1l5 5-5 5' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 12px;
-}
-
-.hero-dealership-reviews-link:hover {
-  color: var(--color-white);
-  text-decoration: underline;
-}
+/* Review link styled via shared .cta-chevron--white (shared-components.css) */
 
 /* === MINI Decorative Frame === */
 .hero-dealership-frame {
@@ -473,11 +437,11 @@ main > .section.hero-dealership-container > .hero-dealership-wrapper {
 /* MINI: align frame with content area, stop above ratings bar */
 .hero-dealership.mini .hero-dealership-frame {
   top: 124px; /* 4px below "Welcome To" text top, matching original offset */
-  bottom: 132px; /* 56px inset + 76px ratings bar */
+  bottom: 142px; /* matches original 56px gap from viewport bottom */
 }
 
 .hero-dealership.mini .hero-dealership-frame .frame-left {
-  top: 47%; /* ~30px below CTAs, matching original gap */
+  top: 275px; /* fixed 30px below CTAs, independent of hero height */
 }
 
 .hero-dealership-frame .frame-top,

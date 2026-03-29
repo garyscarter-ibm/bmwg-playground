@@ -1,3 +1,9 @@
 export default function decorate(block) {
-  // Pre-structured from import
+  [...block.children].forEach((row) => {
+    row.classList.add('overlay-card');
+  });
+
+  block.querySelectorAll('a').forEach((a) => {
+    a.classList.add('cta-chevron', 'cta-chevron--white');
+  });
 }

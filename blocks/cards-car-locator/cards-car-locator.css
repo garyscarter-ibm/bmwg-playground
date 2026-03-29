@@ -15,37 +15,17 @@
   padding: 20px 0 0;
 }
 
-/* Each card row */
+/* Each card uses shared .overlay-card (shared-components.css) */
 .cards-car-locator > div {
-  position: relative;
-  overflow: hidden;
   min-height: 420px;
 }
 
-/* Image cell - absolute fill behind text */
-.cards-car-locator > div > div:first-child {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.cards-car-locator > div > div:first-child p {
-  margin: 0;
-  height: 100%;
-}
-
-.cards-car-locator > div > div:first-child img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 /* Text overlay - positioned bottom-right like original */
-.cards-car-locator > div > div:last-child {
+/* Specificity (0,3,2) beats shared .overlay-card > div:last-child:not(:first-child) (0,3,1) */
+.cards-car-locator > div.overlay-card > div:last-child {
   position: absolute;
-  bottom: 21px;
-  right: 36px;
+  bottom: 15px;
+  right: 19px;
   z-index: 1;
   text-align: right;
 }
@@ -64,24 +44,9 @@
   margin: 0;
 }
 
-/* CTA link with chevron arrow */
-.cards-car-locator a:any-link {
-  color: var(--color-white);
-  font-weight: 400;
-  font-size: 0.8125rem;
-  letter-spacing: 0.39px;
-  text-decoration: none;
-  display: block;
-  text-align: right;
-  padding: 15px 36px 15px 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4 1l5 5-5 5' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 12px;
-}
-
-.cards-car-locator a:any-link:hover {
-  text-decoration: underline;
+/* CTA links — right-aligned within the overlay text container */
+.cards-car-locator a.cta-chevron {
+  margin-left: auto;
 }
 
 /* Tablet+: side by side */

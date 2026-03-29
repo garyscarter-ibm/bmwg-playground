@@ -24,6 +24,11 @@ export default function decorate(block) {
       source.type = 'video/mp4';
       video.append(source);
 
+      // Ensure autoplay works in all browsers including headless
+      video.addEventListener('canplay', () => {
+        video.play().catch(() => {});
+      }, { once: true });
+
       mediaCol.replaceChildren(video);
     }
     mediaCol.classList.add('showcase-media');
@@ -110,7 +115,7 @@ export default function decorate(block) {
     if (ctaP) {
       const ctaLink = ctaP.querySelector('a');
       if (ctaLink) {
-        ctaLink.className = 'showcase-link';
+        ctaLink.className = 'showcase-link cta-chevron cta-chevron--blue';
         ctaDiv.append(ctaLink);
       }
     }
